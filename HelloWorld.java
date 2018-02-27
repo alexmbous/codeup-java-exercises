@@ -7,12 +7,12 @@ public class HelloWorld {
      System.out.println(myFavoriteNumber);
 
         String myString = ("abcd");
-     System.out.print(myString);
+     System.out.println(myString);
 
 //    int myString = 3.14159;
 
     float myNumber = 3.14f;
-    System.out.print(myNumber);
+    System.out.println(myNumber);
 
 
         int i = 5;
@@ -28,16 +28,16 @@ public class HelloWorld {
 
 
 //        int x = 4;
-//        System.out.print(x+=5);
+//        System.out.println(x+=5);
 
 //        int x = 3;
 //        int y = 4;
-//        System.out.print(y *= x);
+//        System.out.println(y *= x);
 
 //        int x = 10;
 //        int y = 2;
-//        System.out.print(x /= y);
-//        System.out.print(y -= x);
+//        System.out.println(x /= y);
+//        System.out.println(y -= x);
 
 
 
