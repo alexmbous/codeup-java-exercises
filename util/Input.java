@@ -9,12 +9,8 @@ public class Input {
         this.scan = new Scanner(System.in).useDelimiter("\n");
     }
 
-    public String getString() {
-        return this.scan.next();
-    }
-
-    public boolean yesNo(String prompt) {
-        System.out.println(prompt);
+    public boolean yesNo() {
+        System.out.println();
         String input = this.scan.next();
         if(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")) {
             return true;
@@ -23,12 +19,18 @@ public class Input {
         }
 }
 
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        return yesNo();
+    }
+
+    public String getString() {
+        return this.scan.next();
+    }
 
         public int getInt(int min, int max){
             System.out.println("Please input an integer between " + min + " and " + max);
-
             int userInput = this.getInt();
-
             if(userInput > max || userInput < min) {
                 return getInt(min, max);
             } else {
@@ -49,33 +51,26 @@ public class Input {
 
         public double getDouble(double min, double max) {
             System.out.println("Please input an number with a decimal between " + min + " and " + max + ".");
-
-            double userInput = this.getDouble();
-
-            if(userInput > max || userInput < min) {
+            double number = this.getDouble();
+            if(number > max || number < min) {
                 return getDouble(min, max);
             } else {
-                return userInput;
+                return number;
             }
         }
+
+    public double getDouble() {
+        return this.scan.nextDouble();
+    }
 
         public double getDouble(double min, double max, String prompt) {
             System.out.println(prompt);
-
-            double userInput = this.getDouble();
-
-            if(userInput > max || userInput < min) {
+            double number = this.getDouble();
+            if(number > max || number < min) {
                 return getDouble(min, max);
             } else {
-                return userInput;
+                return number;
             }
-        }
-
-
-
-
-        public double getDouble() {
-            return this.scan.nextDouble();
         }
 
         public double getDouble(String prompt) {

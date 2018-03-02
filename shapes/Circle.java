@@ -2,24 +2,24 @@ package shapes;
 
     public class Circle {
         private double radius;
-        private static int circleCount;
+        private static int numberOfCircles;
 
         public Circle(double radius) {
             this.radius = radius;
-            Circle.circleCount++;
+            numberOfCircles++;
         }
 
         public double getArea() {
-            return Math.PI * (this.radius * this.radius);
+            return Math.PI * (radius * radius);
         }
 
         public double getCircumference() {
-            double circumference = 2 * Math.PI * this.radius;
+            double circumference = 2 * (Math.PI * radius);
             return circumference;
         }
 
         public static int getCircleCount() {
-            return Circle.circleCount;
+            return numberOfCircles;
         }
 
 

@@ -2,8 +2,7 @@ package shapes;
 
 public class CircleApp {
     public static void main(String[] args) {
-        System.out.println("Let's create a circle!");
-
+        System.out.println("Do you wanna build a circle?!");
         util.Input input = new util.Input();
 
         do {
