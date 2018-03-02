@@ -12,7 +12,7 @@ public class BurgerTester {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("the most popular topping is: " +  BT.mostPopularTopping);
         System.out.println("the average amount of days before expirations is: " +BT.averageDaysBeforeExpiration + " days");
-        System.out.println("Cook burger to "+Burgertools.temperatureWhenCooked + " degrees.");
+        System.out.println("Cook burger to "+ BT.temperatureWhenCooked + " degrees.");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         BT.cookingInstructions();
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

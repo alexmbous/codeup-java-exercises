@@ -33,9 +33,6 @@ public class Burgertools {
         System.out.println(num);
         return num;
     }
-//    public void minuteCounter(){
-//        System.out.println(1);
-//    }
 
 
 }
