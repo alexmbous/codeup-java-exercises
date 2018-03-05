@@ -28,11 +28,11 @@ public class Input {
         return this.scan.next();
     }
 
-        public int getInt(int min, int max){
-            System.out.println("Please input an integer between " + min + " and " + max);
+        public int getInt( int min, int max){
+            System.out.println( min + " and " + max);
             int userInput = this.getInt();
             if(userInput > max || userInput < min) {
-                return getInt(min, max);
+                return getInt( min, max);
             } else {
                 return userInput;
             }
