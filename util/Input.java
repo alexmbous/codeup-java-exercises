@@ -4,57 +4,63 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scan;
+    private static Scanner scan;
     private String hex;
 
-        public Input() {
-            this.scan = new Scanner(System.in).useDelimiter("\n");
+    public Input() {
+        Input.scan = new Scanner(System.in).useDelimiter("\n");
+    }
+
+    public boolean yesNo() {
+        System.out.println();
+        String input = Input.scan.next();
+        if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        return yesNo();
+    }
+
+    public static String getString() {
+        return Input.scan.nextLine();
+    }
+
+    public int getInt() {
+        String userInput = Input.scan.next();
+        try {
+            return Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("Your input must be a number");
+            System.out.println(e.getMessage());
+            return getInt();
+        }
+    }
+
+    public int getInt(int min, int max) {
+        int num;
+        try {
+            String possibleNumber = Input.getString();
+            num = Integer.valueOf(possibleNumber);
+        } catch (NumberFormatException e) {
+            System.out.print("Please enter a number between " + min + " and " + max + ": ");
+            return getInt(min, max);
         }
 
-        public boolean yesNo() {
-            System.out.println();
-            String input = this.scan.next();
-            if(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")) {
-                return true;
-            } else {
-                return false;
-                }
-            }
-
-        public boolean yesNo(String prompt) {
-            System.out.println(prompt);
-            return yesNo();
+        if (num >= min && num <= max) {
+            return num;
         }
 
-        public String getString() {
-            return this.scan.next();
-        }
-
-        public int getInt(int min, int max) {
-        System.out.println("Please input an integer between " + min + " and " + max);
-
-            int userInput = this.scan.nextInt();
-
-            if(userInput > max || userInput < min){
-                return getInt(min, max);
-            } else {
-                return userInput;
-            }
-         }
-
-        public int getInt() {
-            String userInput = this.scan.next();
-            try {
-                return Integer.valueOf(userInput);
-            } catch (NumberFormatException e) {
-                System.out.println("Your input must be a number");
-                System.out.println(e.getMessage());
-                return getInt();
-            }
-        }
+        System.out.println(num + " number out of range, try again");
+        return getInt(min, max);
+    }
 
     public int getInt(String prompt) {
-        String userInput = this.scan.next();
+        String userInput = Input.scan.next();
         try {
             return Integer.valueOf(userInput);
         } catch (NumberFormatException e) {
@@ -74,20 +80,26 @@ public class Input {
         }
     }
 
-    public double getDouble(){
-        return this.scan.nextDouble();
+    public double getDouble() {
+        return Input.scan.nextDouble();
     }
 
     public double getDouble(String prompt) {
         System.out.println(prompt);
-        return this.scan.nextDouble();
+        return Input.scan.nextDouble();
     }
 
-    static String getBin(String s) {
-        return new BigInteger(s, 16).toString(2);
-    }
-    public String toHex(String arg) {
-        return String.format("%x", new BigInteger(1, arg.getBytes(/*YOUR_CHARSET?*/)));
-    }
+
+//    public String getBin(String radix) {
+//        String userInput = scan.next();
+//            try {
+//            return String.valueOf(userInput, 16);
+//        } catch (NumberFormatException e){
+//                System.out.println("please enter a valid hex value");
+//                return getBin();
+//            }
+//    public Integer getHex(String, radix) {
+//        return Integer.valueOf(userInput, 16);
+//    }
 
 }
